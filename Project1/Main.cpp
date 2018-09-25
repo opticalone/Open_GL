@@ -73,10 +73,7 @@ int main()
 
 	glm::vec3 lightDir = glm::vec3(-1, 0, 0);
 
-	//funStuff
-	int red = rand() % 255;
-	int green = rand() % 255;
-	int blue = rand() % 255;
+	
 
 	int rotx = 0;
 	int roty = 1;
@@ -85,12 +82,10 @@ int main()
 	int timerMax = 25;
 	int timer = timerMax;
 
-	whitePixel[0] = red;
-	whitePixel[1] = green;
-	whitePixel[2] = blue;
+	
 
-	texture newTex = makeTexture(1, 1, 3, whitePixel);
-	texture textTex = loadTexture("me.jpg");
+
+	texture textTex = loadTexture("meme.jpg");
 
 	while (!game.shouldClose())
 	{
@@ -108,20 +103,7 @@ int main()
 		draw(mvpFragShadTest, triangle);
 
 		//printf("%d\n", timer);
-		timer--;
-		if (timer <= 0) 
-		{
-			red = rand() % 255;
-			green = rand() % 255;
-			blue = rand() % 255;
 
-			whitePixel[0] = red;
-			whitePixel[1] = green;
-			whitePixel[2] = blue;
-			newTex = makeTexture(1, 1, 3, whitePixel);
-			
-			timer = timerMax;
-		}
 	}
 
 	game.term();
